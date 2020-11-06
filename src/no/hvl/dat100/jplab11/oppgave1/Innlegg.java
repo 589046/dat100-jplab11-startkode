@@ -4,68 +4,70 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+	private int id;
+	private String bruker;
+	private String dato;
+	private int likes;
 	
 	public Innlegg() {
 		
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
 	}
 	
 	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-
+		return bruker;
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
-		
+		return dato;
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return id;
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return likes;
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		likes += 1;
 	}
 	
-	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+	public boolean erLik(Innlegg innlegg) { // Metoden sjekkar om id'en til innlegg-objektet er lik id variabelen
+		if (innlegg.getId() != id) {
+			return false;
+		}
+		return true;
 	}
 	
 	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
+		//return id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		//Linjen over lagar ein string på den "enkle måten".
+		//Linjen under lagar ein string ved bruk av format metoden i string klassen.
+		return String.format("%d\n%s\n%s\n%d\n", id, bruker, dato, likes);
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
